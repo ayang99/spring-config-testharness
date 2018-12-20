@@ -1,5 +1,5 @@
 # spring-config-testharness
-Sample Spring Boot app demonstrating use of application.yml and external application-{profile}.properties files convention
+Sample Spring Boot app demonstrating use of ```application.yml``` and external ```application-{profile}.properties``` files convention
 
 ```
 java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar --spring.config.location=classpath:./,../conf/ --spring.profiles.active=qa
