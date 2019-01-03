@@ -9,10 +9,16 @@ java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar --spring.config.location=
 -	These are the only settings that you would use in your IDE – you wouldn’t try to pick up external properties from
 ```src/main/conf/application-{profile}.properties``` – properties file that sets profile-specific values
 - these profile-specific files could even be left out of source control and be managed separately/manually (keeping production passwords out of git)
-- also can use environment variables to control which profile is active
+- also can use environment variables to control which profile is active:
+
+```
+export SPRING_CONFIG_LOCATION=classpath:./,../conf/
+export SPRING_PROFILES_ACTIVE=qa
+java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar 
+```
 
 in the pom.xml:
--	spring-boot-maven-plugin takes care of building executable spring boot jar
+-	spring-boot-maven-plugin takes care of building executable spring boot jar - which can be directly deployed as an [init.d or systemd service](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#deployment-systemd-service)
 -	maven-assembly-plugin takes executable spring boot jar and tar-balls it with the external properties files
  - layout of tar.gz file is /lib and /conf
  - can add a /bin for the java app wrapper shell scripts (like tanukisoftware jsw)
