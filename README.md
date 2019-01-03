@@ -17,6 +17,12 @@ export SPRING_PROFILES_ACTIVE=qa
 java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar 
 ```
 
+- you can even set SPRING_APPLICATION_JSON with an entire YAML equivalent set of properties:
+
+```
+export SPRING_APPLICATION_JSON='{"ec2":{"public":{"url":"http://mydomain.com"}}}'
+```
+
 in the pom.xml:
 -	spring-boot-maven-plugin takes care of building executable spring boot jar - which can be directly deployed as an [init.d or systemd service](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#deployment-systemd-service)
 -	maven-assembly-plugin takes executable spring boot jar and tar-balls it with the external properties files
