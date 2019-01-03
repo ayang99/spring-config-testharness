@@ -8,6 +8,7 @@ java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar --spring.config.location=
 ```src/main/resources/application.yml``` – contains default, static values as well as development-specific settings
 -	These are the only settings that you would use in your IDE – you wouldn’t try to pick up external properties from
 ```src/main/conf/application-{profile}.properties``` – properties file that sets profile-specific values
+```src/main/conf/application-{profile}.yml``` – properties file in YAML format that sets profile-specific values (don't use tabs)
 - these profile-specific files could even be left out of source control and be managed separately/manually (keeping production passwords out of git)
 - also can use environment variables to control which profile is active:
 
