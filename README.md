@@ -13,7 +13,7 @@ java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar --spring.config.location=
 - also can use environment variables to control which profile is active:
 
 ```
-export SPRING_CONFIG_LOCATION=classpath:./,../conf/
+export SPRING_CONFIG_LOCATION=classpath:/,../conf/
 export SPRING_PROFILES_ACTIVE=qa
 java -jar spring-config-testharness-0.0.1-SNAPSHOT.jar 
 ```
